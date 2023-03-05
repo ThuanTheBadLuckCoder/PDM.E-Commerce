@@ -38,10 +38,10 @@ include('functions/common_function.php');
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Product</a>
+          <a class="nav-link" href="display_all.php">Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
+          <a class="nav-link" href="Register.html" target="_blank">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
@@ -67,7 +67,7 @@ include('functions/common_function.php');
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
-      <form class="d-flex" role="search" action="" method = "get">
+      <form class="d-flex" role="search" action="search_product.php" method = "get">
         <input class="form-control me-2" type="search" 
         placeholder="Search" aria-label="Search" name="search_data">
       <input type="submit"  value = "Search" 
@@ -99,15 +99,15 @@ include('functions/common_function.php');
   <div class="col-md-10">
     <!-- products -->
     <div class="row">
+    
   <!-- fetching products -->
-       <?php
+  <?php
       // call function
-      search_product();
+      view_details();
       get_unique_categories();
       get_unique_brands();
       
       ?>
-
 
 <!-- row end -->
 
@@ -123,8 +123,6 @@ include('functions/common_function.php');
       <?php 
       getbrands();
       ?>
-
-
 
       <li class="nav-item bg-info">
         <a href="#" class="nav-link text-light"><h4>Categories</h4></a>
