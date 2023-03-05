@@ -1,5 +1,5 @@
 <?php
-/*
+
 include('../includes/connect.php');
 if(isset($_POST['insert_cat'])){
     $category_title=$_POST['cat_title'];
@@ -16,12 +16,12 @@ if(isset($_POST['insert_cat'])){
 
         if($result){
             echo "<script>alert('Category has been inserted')</script>";
-        }
+    }
     }
 
-
+    
 }
-*/?>
+?>
 
 <h2 class="text-center">Insert Categories</h2>
 <form action="" method = "post" class= "mb-2">

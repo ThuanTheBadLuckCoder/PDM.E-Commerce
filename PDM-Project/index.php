@@ -18,7 +18,7 @@ include('functions/common_function.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css file -->
-    <link rel="stylesheet" href="Web2Style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -35,10 +35,10 @@ include('functions/common_function.php');
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Product</a>
+          <a class="nav-link" href="display_all.php">Product</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="Register.html" target="_blank">Register</a>
@@ -100,56 +100,13 @@ include('functions/common_function.php');
     <!-- products -->
     <div class="row">
   <!-- fetching products -->
-  <div class='col-md-4 mb-2'>
-    <div class='card' >
-      <img src='./Images/mac.jpg' 
-      class='card-img-top' alt='$product_title'>
-      <div class='card-body'>
-        <h5 class='card-title'>$product_title</h5>
-        <p class='card-text'>$product_description</p>
-        <a href='#' class='btn btn-info'>Add to cart</a>
-        <a href='#' class='btn btn-secondary'>View more</a>
-      </div>
-    </div>
-  </div>
-
-  <div class='col-md-4 mb-2'>
-    <div class='card' >
-      <img src='./Images/mono19794468-151015-02.webp' 
-      class='card-img-top' alt='$product_title'>
-      <div class='card-body'>
-        <h5 class='card-title'>$product_title</h5>
-        <p class='card-text'>$product_description</p>
-        <a href='#' class='btn btn-info'>Add to cart</a>
-        <a href='#' class='btn btn-secondary'>View more</a>
-      </div>
-    </div>
-  </div>
-  <div class='col-md-4 mb-2'>
-    <div class='card' >
-      <img src='./Images/tải xuống.png' 
-      class='card-img-top' alt='$product_title'>
-      <div class='card-body'>
-        <h5 class='card-title'>$product_title</h5>
-        <p class='card-text'>$product_description</p>
-        <a href='#' class='btn btn-info'>Add to cart</a>
-        <a href='#' class='btn btn-secondary'>View more</a>
-      </div>
-    </div>
-  </div>
-  <div class='col-md-4 mb-2'>
-    <div class='card' >
-      <img src='./Images/tải xuống.jfif' 
-      class='card-img-top' alt='$product_title'>
-      <div class='card-body'>
-        <h5 class='card-title'>$product_title</h5>
-        <p class='card-text'>$product_description</p>
-        <a href='#' class='btn btn-info'>Add to cart</a>
-        <a href='#' class='btn btn-secondary'>View more</a>
-      </div>
-    </div>
-  </div>
-
+  <?php
+      // call function
+      getproducts();
+      get_unique_categories();
+      get_unique_brands();
+      
+      ?>
 
 <!-- row end -->
 
@@ -165,8 +122,6 @@ include('functions/common_function.php');
       <?php 
       getbrands();
       ?>
-
-
 
       <li class="nav-item bg-info">
         <a href="#" class="nav-link text-light"><h4>Categories</h4></a>

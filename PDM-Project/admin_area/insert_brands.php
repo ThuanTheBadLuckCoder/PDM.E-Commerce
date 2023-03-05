@@ -1,7 +1,7 @@
 
 <?php
 
-/* include('../includes/connect.php');
+include('../includes/connect.php');
 if(isset($_POST['insert_brand'])){
     $brand_title=$_POST['brand_title'];
 
@@ -21,7 +21,7 @@ if(isset($_POST['insert_brand'])){
     }
 
     
-} */
+}
 ?>
 
 <h2 class="text-center">Insert Brands</h2>
