@@ -53,7 +53,7 @@
             <div class="col-md-12 bg-secondary p-1 d-flex 
             align-items-center">
                 <div class="p-3">
-                    <a href="#"><img src="../images/pineapple.png" alt="" 
+                    <a href="#"><img src="../images/af11.png" alt="" 
                     class = "admin_image"></a>
                     <p class="text-light text-center">Admin name</p>
                 </div>
@@ -62,11 +62,11 @@
                     my-1">Insert Product</a></button>
                     <button><a href="" class="nav-link text-light bg-info 
                     my-1">View Products</a></button>
-                    <button><a href="admin.php?insert_categories" class="nav-link text-light bg-info
+                    <button><a href="index.php?insert_categories" class="nav-link text-light bg-info
                     my-1">Insert Categories</a></button>
                     <button><a href="" class="nav-link text-light bg-info 
                     my-1">View Categories</a></button>
-                    <button><a href="admin.php?insert_brands" class="nav-link text-light bg-info
+                    <button><a href="index.php?insert_brands" class="nav-link text-light bg-info
                     my-1">Insert Brands</a></button>
                     <button><a href="" class="nav-link text-light bg-info 
                     my-1">View Brands</a></button>
