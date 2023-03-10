@@ -1,6 +1,5 @@
 <?php 
-include('includes/connect.php');
-include('functions/common_function.php');
+include('../includes/connect.php');
 
 ?>
 
@@ -10,7 +9,7 @@ include('functions/common_function.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce Website</title>
+    <title>Ecommerce Website Check-out</title>
     <!-- bootstrap CSS link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -41,17 +40,12 @@ include('functions/common_function.php');
           <a class="nav-link" href="display_all.php">Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Register.html" target="_blank">Register</a>
+          <a class="nav-link" href="Register.ht ml" target="_blank">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cart.php"><i class="fa-sharp fa-solid fa-cart-shopping"><sup><?php cart_item()?></sup></i> </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Total Price: <?php total_cart_price();?></a>
-        </li>
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -76,10 +70,7 @@ include('functions/common_function.php');
     </div>
   </div>
 </nav>
-<!--calling cart()  -->
-<?php
-  cart();
-?>
+
 
 <!-- second child -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
@@ -88,7 +79,7 @@ include('functions/common_function.php');
           <a class="nav-link" href="#">Welcome guest</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./user_area/user_login.php">Login</a>
+          <a class="nav-link" href="#">Login</a>
         </li>
   </ul>
 </nav>
@@ -101,45 +92,22 @@ include('functions/common_function.php');
 
 <!-- fourth child -->
 <div class="row px-1">
-  <div class="col-md-10">
+  <div class="col-md-12">
     <!-- products -->
     <div class="row">
-    
-  <!-- fetching products -->
-  <?php
-      // call function
-      view_details();
-      get_unique_categories();
-      get_unique_brands();
-      
-      ?>
-
+        <?php
+        if(!isset($_SESSION['username'])){
+            include('user_login.php');
+        }else{
+            include('payment.php');
+        }
+        ?>
 <!-- row end -->
 
   </div>
 <!-- column end -->
   </div>
-  <div class="col-md-2 bg-secondary p-0">
-    <!-- sidenav -->
-    <ul class="navbar-nav me-auto text-center">
-      <li class="nav-item bg-info">
-        <a href="#" class="nav-link text-light"><h4>Delivery Brand</h4></a>
-      </li>
-      <?php 
-      getbrands();
-      ?>
-
-      <li class="nav-item bg-info">
-        <a href="#" class="nav-link text-light"><h4>Categories</h4></a>
-      </li>
-      <?php 
-      getcategories();
-      
-      ?>
-      
-    </ul>
-  </div>
-</div>
+  
   
 
 <!-- bootstrap js link-->    

@@ -38,7 +38,7 @@ include('functions/common_function.php');
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Product</a>
+          <a class="nav-link" href="display_all.php">Product</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Register</a>
@@ -47,10 +47,10 @@ include('functions/common_function.php');
           <a class="nav-link" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-sharp fa-solid fa-cart-shopping"><sup><?php cart_item()?></sup></i> </a>
+          <a class="nav-link" href="cart.php"><i class="fa-sharp fa-solid fa-cart-shopping"><sup><?php cart_item()?></sup></i> </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Total Price: 100/-</a>
+          <a class="nav-link" href="#">Total Price: <?php total_cart_price();?></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -88,7 +88,7 @@ include('functions/common_function.php');
           <a class="nav-link" href="#">Welcome guest</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" href="./user_area/user_login.php">Login</a>
         </li>
   </ul>
 </nav>
