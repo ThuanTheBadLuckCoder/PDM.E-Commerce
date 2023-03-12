@@ -145,14 +145,18 @@
         values ('$user_name','$user_email','$hash_password','$user_image','$user_ip','$user_address','$user_mobile')";
 
         $sql_execute=mysqli_query($con,$insert_query);
+        }
 
-        if($sql_execute){
-            echo "<script>alert('data inserted succesfully')</script>";
+        //selecting cart items
+        $select_cart_items="Select * from `cart_details` where ip_address='$user_ip'";
+        $result_cart=mysqli_query($con,$select_cart_items);
+        $rows_count=mysqli_num_rows($result_cart);
+        if($rows_count>0){
+            $_SESSION['username']=$user_name;
+            echo "<script>alert('You have items in your cart')</script>";
+            echo "<script>window.open('checkout.php','_self')</script>";
         }else{
-            die(mysqli_errno($con));
+            echo "<script>window.open('../index.php','_self')</script>"; 
         }
-        }
-        
-
     }
 ?>

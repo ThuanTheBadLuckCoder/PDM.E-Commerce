@@ -1,6 +1,6 @@
 <?php 
 include('../includes/connect.php');
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -34,13 +34,13 @@ include('../includes/connect.php');
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="display_all.php">Product</a>
+          <a class="nav-link" href="../display_all.php">Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Register.ht ml" target="_blank">Register</a>
+          <a class="nav-link" href="user_registration.php" target="_blank">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
@@ -61,7 +61,7 @@ include('../includes/connect.php');
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
-      <form class="d-flex" role="search" action="search_product.php" method = "get">
+      <form class="d-flex" role="search" action="../search_product.php" method = "get">
         <input class="form-control me-2" type="search" 
         placeholder="Search" aria-label="Search" name="search_data">
       <input type="submit"  value = "Search" 
@@ -75,12 +75,24 @@ include('../includes/connect.php');
 <!-- second child -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
   <ul class="navbar-nav me-auto">
-  <li class="nav-item">
-          <a class="nav-link" href="#">Welcome guest</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
+  <?php
+          if(!isset($_SESSION['username'])){
+            echo "<li class='nav-item'>
+                    <a class='nav-link' href='#'>Welcome guest</a>
+                  </li>";
+            echo "<li class='nav-item'>
+                    <a class='nav-link' href='user_login.php'>Login</a>
+                  </li>";
+          }else{
+            echo "<li class='nav-item'>
+                    <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+                  </li>";
+            echo "<li class='nav-item'>
+                    <a class='nav-link' href='logout.php'>Logout</a>
+                  </li>";
+          }
+        ?>
+        
   </ul>
 </nav>
 
@@ -97,7 +109,9 @@ include('../includes/connect.php');
     <div class="row">
         <?php
         if(!isset($_SESSION['username'])){
-            include('user_login.php');
+          /* header("Location: user_login.php");
+          exit; */
+          include('user_login.php');
         }else{
             include('payment.php');
         }

@@ -1,7 +1,7 @@
 <?php 
 include('includes/connect.php');
 include('functions/common_function.php');
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ include('functions/common_function.php');
           <a class="nav-link" href="display_all.php">Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Register.ht ml" target="_blank">Register</a>
+          <a class="nav-link" href="./user_area/user_registration.php" target="_blank">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
@@ -85,12 +85,24 @@ include('functions/common_function.php');
 <!-- second child -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
   <ul class="navbar-nav me-auto">
-  <li class="nav-item">
-          <a class="nav-link" href="#">Welcome guest</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./user_area/user_login.php">Login</a>
-        </li>
+  
+        <?php
+          if(!isset($_SESSION['username'])){
+            echo "<li class='nav-item'>
+                    <a class='nav-link' href='#'>Welcome guest</a>
+                  </li>";
+            echo "<li class='nav-item'>
+                    <a class='nav-link' href='./user_area/user_login.php'>Login</a>
+                  </li>";
+          }else{
+            echo "<li class='nav-item'>
+                    <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+                  </li>";
+            echo "<li class='nav-item'>
+                    <a class='nav-link' href='./user_area/logout.php'>Logout</a>
+                  </li>";
+          }
+        ?>
   </ul>
 </nav>
 
@@ -111,9 +123,7 @@ include('functions/common_function.php');
       getproducts();
       get_unique_categories();
       get_unique_brands();
-     /*  $ip = getIPAddress();  
-      echo 'User Real IP Address - '.$ip; 
-       */
+    
       ?>
 
 <!-- row end -->

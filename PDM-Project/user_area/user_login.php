@@ -1,3 +1,8 @@
+<?php 
+    include('../includes/connect.php');
+    include('../functions/common_function.php');
+    @session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,23 +98,66 @@
       form button:hover {
         background: #000000;
       }
-      </style></head><body>
+      </style>
+      </head>
+      <body>
       
-      <form>
+      <form action="" method = "post">
         <header>Sign in</header>
         
             <div class="form-group">
-              <input type="text" name="user_name" id="user_name" class="form-control input-lg" placeholder="User Name" autocomplete="off" required = "required" tabindex="1">
+              <input type="text" name="user_name" id="user_name" class="form-control input-lg" placeholder="User Name" autocomplete="off" required = "required">
             </div>
         
         
         <div class="form-group">
-          <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="2">
+          <input type="password" name="user_password" id="user_password" class="form-control input-lg" placeholder="Password">
         </div>
           
-        <div class="col-xs-12 col-md-6"><input type="submit" value="Login" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-        <p style="text-align: center;font-size: 20px;">or if you don't hava an account</p>
+        <div class="col-xs-12 col-md-6">
+          <input type="submit" value="Login" class="btn btn-primary btn-block btn-lg"  name="user_login">
+        </div>
+        <p style="text-align: center;font-size: 20px;">or if you don't have an account</p>
         <button type="button" onclick="location.href='user_registration.php'">Register</button>
       </form>
 </body>
 </html>
+
+<?php
+  if(isset($_POST['user_login'])){
+    $user_name=$_POST['user_name'];
+    $user_password=$_POST['user_password'];
+    $user_ip=getIPAddress();
+
+    $select_query="Select * from `user_table` where username='$user_name'";
+    $result=mysqli_query($con,$select_query);
+    $row_count=mysqli_num_rows($result);
+    $row_data=mysqli_fetch_assoc($result);
+
+    //cart item
+    $select_query_cart="Select * from `cart_details` where ip_address='$user_ip'";
+    $select_cart=mysqli_query($con,$select_query_cart);
+    $row_count_cart=mysqli_num_rows($select_cart);
+
+    if($row_count>0){
+      $_SESSION['username']=$user_name;
+      if(password_verify($user_password,$row_data['user_password'])){
+        /* echo "<script>alert('Login successful')</script>"; */
+        if($row_count==1 and $row_count_cart==0){
+          $_SESSION['username']=$user_name;
+          echo "<script>alert('Login successful')</script>";
+          echo "<script>window.open('profile.php','_self')</script>";
+        }else{
+          $_SESSION['username']=$user_name;
+          echo "<script>alert('Login successful')</script>";
+          echo "<script>window.open('payment.php','_self')</script>";
+        }
+      }else{
+        echo "<script>alert('invalid credentials')</script>";
+      }
+
+    }else{
+      echo "<script>alert('invalid credentials')</script>";
+    }
+  }
+?>
