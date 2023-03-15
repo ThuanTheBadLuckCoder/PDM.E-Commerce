@@ -22,19 +22,31 @@ function getproducts(){
         $product_image1 = $row['product_image1'];
         $product_price = $row['product_price'];
         echo "<div class='col-md-4 mb-2'>
-        <div class='card' >
+        <div >
           <img src='./admin_area/product_images/$product_image1' 
-          class='card-img-top' alt='$product_title'>
+           width='600px' height='600px' alt='$product_title'>
           <div class='card-body'>
             <h5 class='card-title'>$product_title</h5>
             <p class='card-text'>$product_description</p>
             <p class='card-text'>Price: $product_price</p>
-            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+            <a href='display_all.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
           </div>
         </div>
       </div>";
-      }
+/* <div class='col-md-4 mb-2'>
+      <div class='card' >
+        <a href="computer.html"><img src='./image/suit.jpg' 
+          class='card-img-top' alt='$product_title'></a>
+        <div class='card-body'>
+          <h5 class='card-title'>Macbook pro M1</h5>
+          <p class='card-text'>$product_description</p>
+          <a href='#' class='btn btn-info'>Add to cart</a>
+          <a href='#' class='btn btn-secondary'>View more</a>
+        </div>
+      </div>
+    </div> */
+    }
     }
     }
   }
@@ -65,7 +77,7 @@ function get_all_products(){
             <h5 class='card-title'>$product_title</h5>
             <p class='card-text'>$product_description</p>
             <p class='card-text'>Price: $product_price</p>
-            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+            <a href='display_all.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
           </div>
         </div>
@@ -107,7 +119,7 @@ function get_unique_categories(){
             <h5 class='card-title'>$product_title</h5>
             <p class='card-text'>$product_description</p>
             <p class='card-text'>Price: $product_price</p>
-            <a href='#' class='btn btn-info'>Add to cart</a>
+            <a href='display_all.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
             </div>
             </div>
@@ -129,6 +141,7 @@ function get_unique_brands(){
       $result_query= mysqli_query($con, $select_query);
       $num_of_rows=mysqli_num_rows($result_query);
       if($num_of_rows ==0){
+        
         echo "<h2 class='text-center text-danger'>No stock for this brand</h2>";
       }
       //echo $row['product_title'];
@@ -148,7 +161,7 @@ function get_unique_brands(){
             <h5 class='card-title'>$product_title</h5>
             <p class='card-text'>$product_description</p>
             <p class='card-text'>Price: $product_price</p>
-            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+            <a href='display_all.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
             </div>
             </div>
@@ -169,7 +182,7 @@ function getbrands(){
         $brand_title= $row_data['brand_title'];
         $brand_id=$row_data['brand_id'];
         echo "<li class='nav-item'>
-        <a href='index.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a>
+        <a href='product_details.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a>
       </li>";
       }
 }
@@ -185,7 +198,7 @@ function getcategories(){
         $category_title= $row_data['category_title'];
         $category_id=$row_data['category_id'];
         echo "<li class='nav-item'>
-        <a href='index.php?category=$category_id' class='nav-link text-light'>$category_title</a>
+        <a href='product_details.php?category=$category_id' class='nav-link text-light'>$category_title</a>
       </li>";
       }
 }
@@ -221,7 +234,7 @@ function search_product(){
             <h5 class='card-title'>$product_title</h5>
             <p class='card-text'>$product_description</p>
             <p class='card-text'>Price: $product_price</p>
-            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+            <a href='display_all.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
           </div>
         </div>
@@ -264,7 +277,7 @@ function view_details(){
               <h5 class='card-title'>$product_title</h5>
               <p class='card-text'>$product_description</p>
               <p class='card-text'>Price: $product_price</p>
-              <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+              <a href='display_all.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
               <a href='index.php' class='btn btn-secondary'>Go Home</a>
             </div>
           </div>
@@ -324,13 +337,13 @@ function cart(){
     $num_of_rows=mysqli_num_rows($result_query);
       if($num_of_rows >0){
         echo "<script>alert('This item is already added to cart')</script>";
-        echo "<script>window.open('index.php','_self')</script>";
+        echo "<script>window.open('cart.php','_self')</script>";
       }else{
         $insert_query="insert into `cart_details` (product_id,ip_address,quantity)
         values ($get_product_id,'$get_ip_add',0)";
         $result_query= mysqli_query($con, $insert_query);
         echo "<script>alert('Added to cart')</script>";
-        echo "<script>window.open('index.php','_self')</script>";
+        echo "<script>window.open('cart.php','_self')</script>";
       }
 
 

@@ -1,4 +1,4 @@
-* {
+/* * {
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -8,13 +8,13 @@
 .logo{
     width: 7%;
     height: 7%;
-}
+} */
 
-.card-img-top{
+/* .card-img-top{
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: contain;
-}
+} */
 
 /*.admin_image{
     width: 100px;

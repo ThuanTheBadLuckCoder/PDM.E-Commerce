@@ -3,6 +3,13 @@ include('includes/connect.php');
 include('functions/common_function.php');
 session_start();
 ?>
+<!-- <style>
+        .cart_img{
+        width: 80px;
+        height: 80px;
+        object-fit:contain;
+        }
+    </style> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +39,7 @@ session_start();
 <!-- navbar --> 
 <div class="container-fluid p-0">
     <!-- first child -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
   <div class="container-fluid">
     <img src="./images/logo.png" alt="" class='logo'>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
@@ -57,20 +64,8 @@ session_start();
           <a class="nav-link" href="cart.php"><i class="fa-sharp fa-solid fa-cart-shopping"><sup><?php cart_item();?></sup></i> </a>
         </li>
         
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
+        
+       
       </ul>
     </div>
   </div>
@@ -105,10 +100,10 @@ session_start();
 </nav>
 
 <!-- third child -->
-<div class="bg-light">
+<!-- <div class="bg-light">
   <h3 class="text-center">Hidden Store</h3>
   <p class="text-center">Communication is at the heart of e-commerce and coummunity</p>
-</div>
+</div> -->
 
 <!-- fourth child table -->
 <div class="container">
@@ -178,7 +173,7 @@ session_start();
         <!-- subtotal -->
         <div class="d-flex">
             <h4 class="px-3">Subtotal: <strong><?php echo $total_price?></strong></h4>
-            <button class="bg-info px-3 py-2"><a href="index.php">Continue Shopping</a></button>
+            <button class="bg-info px-3 py-2"><a href="display_all.php">Continue Shopping</a></button>
             <button class="bg-info p-3 py-2"><a href="./user_area/checkout.php">Checkout</a></button>
 
         </div>
