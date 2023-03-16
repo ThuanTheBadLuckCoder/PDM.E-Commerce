@@ -11,15 +11,29 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDM</title>
-    <link rel="stylesheet" href="Test_Style.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!------ Include the above in your HEAD tag ---------->
+     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Test_Style.css">
+    <style>
+    .card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+}</style>
+<style>
+  .my-div {
+    margin-top: 20px; /* adjust the value to move the div down as desired */
+  }
+</style>
+    
+     <!------ Include the above in your HEAD tag ---------->
 </head>
 
 <body>
@@ -72,12 +86,7 @@ session_start();
                     </ul>
                     
                     <ul class="nav navbar-nav pull-right">
-                        <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signed in as  <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Change Password</a></li>
-                                <li><a href="#">My Profile</a></li>
-                            </ul>
-                        </li>
+                        
                         <?php
                           if(!isset($_SESSION['username'])){
                             echo "<li class='nav-item'>
@@ -88,7 +97,7 @@ session_start();
                                   </li>";
                           }else{
                             echo "<li class='nav-item'>
-                                    <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+                                    <a class='nav-link' href='./user_area/profile.php'>Welcome ".$_SESSION['username']."</a>
                                   </li>";
                             echo "<li class='nav-item'>
                                     <a class='nav-link' href='./user_area/logout.php'>Logout</a>
@@ -114,28 +123,7 @@ session_start();
   cart();
 ?>
 
-<!-- second child -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-  <ul class="navbar-nav me-auto">
-  <?php
-          if(!isset($_SESSION['username'])){
-            echo "<li class='nav-item'>
-                    <a class='nav-link' href='#'>Welcome guest</a>
-                  </li>";
-            echo "<li class='nav-item'>
-                    <a class='nav-link' href='./user_area/user_login.php'>Login</a>
-                  </li>";
-          }else{
-            echo "<li class='nav-item'>
-                    <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
-                  </li>";
-            echo "<li class='nav-item'>
-                    <a class='nav-link' href='./user_area/logout.php'>Logout</a>
-                  </li>";
-          }
-        ?>
-  </ul>
-</nav>
+
 
 <div class="bg-light">
   <h3 class="text-center">Hidden Store</h3>
@@ -143,7 +131,7 @@ session_start();
 </div>
 
 <!-- fourth child -->
-<div class="row px-1">
+<div class="row px-1 my-div">
   <div class="col-md-10">
     <!-- products -->
     <div class="row">

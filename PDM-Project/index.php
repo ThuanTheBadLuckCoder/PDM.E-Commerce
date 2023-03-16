@@ -71,12 +71,7 @@ session_start();
                     </ul>
                     
                     <ul class="nav navbar-nav pull-right">
-                        <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signed in as  <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Change Password</a></li>
-                                <li><a href="#">My Profile</a></li>
-                            </ul>
-                        </li>
+                        
                         <?php
                           if(!isset($_SESSION['username'])){
                             echo "<li class='nav-item'>
@@ -87,7 +82,7 @@ session_start();
                                   </li>";
                           }else{
                             echo "<li class='nav-item'>
-                                    <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+                                    <a class='nav-link' href='./user_area/profile.php'>Welcome ".$_SESSION['username']."</a>
                                   </li>";
                             echo "<li class='nav-item'>
                                     <a class='nav-link' href='./user_area/logout.php'>Logout</a>

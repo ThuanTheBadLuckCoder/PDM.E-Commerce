@@ -22,14 +22,19 @@ session_start();
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Test_Style.css">
-    <!-- <style>
+    <style>
     .card-img-top {
   width: 100%;
   height: 200px;
   object-fit: contain;
   border-radius: 8px;
-} -->
-}</style>
+}
+</style>
+<style>
+  .my-div {
+    margin-top: 20px; /* adjust the value to move the div down as desired */
+  }
+</style>
 <!------ Include the above in your HEAD tag ---------->
 </head>
 
@@ -125,28 +130,7 @@ session_start();
   cart();
 ?>
 
-<!-- second child -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-  <ul class="navbar-nav me-auto">
-  <?php
-          if(!isset($_SESSION['username'])){
-            echo "<li class='nav-item'>
-                    <a class='nav-link' href='#'>Welcome guest</a>
-                  </li>";
-            echo "<li class='nav-item'>
-                    <a class='nav-link' href='./user_area/user_login.php'>Login</a>
-                  </li>";
-          }else{
-            echo "<li class='nav-item'>
-                    <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
-                  </li>";
-            echo "<li class='nav-item'>
-                    <a class='nav-link' href='./user_area/logout.php'>Logout</a>
-                  </li>";
-          }
-        ?>
-  </ul>
-</nav>
+
 
 <div class="bg-light">
   <h3 class="text-center">Hidden Store</h3>
@@ -154,8 +138,16 @@ session_start();
 </div>
 
 <!-- third child -->
-<div class="row px-1">
-  <div class="col-md-12">
+<div class="row px-1 my-div">
+  <div class="col-md-2 p-2 ">
+    <ul class="navbar-nav bg-warning text-center">
+      <li class="active">
+        <a href="index.php" class=""><?php getbrands(); ?></h4></a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="col-md-10">
     <!-- products -->
     <div class="row">
   <!-- fetching products -->

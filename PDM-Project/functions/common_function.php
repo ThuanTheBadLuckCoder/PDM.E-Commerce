@@ -24,7 +24,7 @@ function getproducts(){
         echo "<div class='col-md-4 mb-2'>
         <div >
           <img src='./admin_area/product_images/$product_image1' 
-           width='600px' height='600px' alt='$product_title'>
+           alt='$product_title'>
           <div class='card-body'>
             <h5 class='card-title'>$product_title</h5>
             <p class='card-text'>$product_description</p>
@@ -287,7 +287,7 @@ function view_details(){
             <!-- related imges -->
             <div class='row'>
                 <div class='col-md-12'>
-                    <h4 class='text-center'>Related Products</h4>
+                    <h4 class='text-center'>Related Images</h4>
                 </div>
 
                 <div class='col-md-6'>
@@ -390,6 +390,34 @@ function total_cart_price(){
 
 }
 
+//get user order details
+function get_user_order_details(){
+  global $con;
+  $user_name=$_SESSION['username'];
+  $get_details = "Select * from `user_table` where username='$user_name'";
+  $result_query=mysqli_query($con, $get_details);
+  while($row_query=mysqli_fetch_array($result_query)){
+    $user_id=$row_query['user_id'];
+    if(!isset($_GET['edit_account'])){
+      if(!isset($_GET['user_orders'])){
+        if(!isset($_GET['delete_account'])){
+          $get_orders="Select * from `user_orders` where user_id=$user_id and 
+          order_status='pending'";
+          $result_order_query=mysqli_query($con, $get_orders);
+          $row_count=mysqli_num_rows($result_order_query);
+          if($row_count>0){
+            echo "<h3 class='text-center text-success'>You have <span class='text-danger'>$row_count</span> pending orders</h3>";
+            echo "<div class='text-center'><a href='profile.php?user_orders'>View orders</a></div>";
+          }else
+            echo "<h3 class='text-center text-success'>You have <span class='text-danger'>$row_count</span> pending orders</h3>";
+            echo "<div class='text-center'><a href='../display_all.php'>View more products</a></div>";
 
+        }
+      }
+    }
+  }
+
+
+}
 
 ?>

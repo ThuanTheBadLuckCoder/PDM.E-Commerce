@@ -45,9 +45,7 @@
                     <div class="form-group">
                         <input type="email" name="user_email" id="user_email" class="form-control input-lg" placeholder="Email Address" tabindex="2">
                     </div>
-                    <div class="form-group">
-                        <input type="file" name="user_image" id="user_image" class="form-control input-lg"  tabindex="3">
-                    </div>
+                    
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
@@ -119,8 +117,8 @@
     if(isset($_POST['user_register'])){
         $user_name = $_POST['user_name'];
         $user_email = $_POST['user_email'];
-        $user_image = $_FILES['user_image']['name'];
-        $user_image_tmp= $_FILES['user_image']['tmp_name'];
+        
+        
         $user_password = $_POST['password'];
         $hash_password = password_hash($user_password, PASSWORD_DEFAULT);
         $password_confirmation = $_POST['password_confirmation'];
@@ -140,9 +138,9 @@
         else{
 
         //insert query
-        move_uploaded_file($user_image_tmp,'./user_images/$user_image');
-        $insert_query="insert into `user_table` (username,user_email,user_password,user_image,user_ip,user_address,user_mobile) 
-        values ('$user_name','$user_email','$hash_password','$user_image','$user_ip','$user_address','$user_mobile')";
+        
+        $insert_query="insert into `user_table` (username,user_email,user_password,user_ip,user_address,user_mobile) 
+        values ('$user_name','$user_email','$hash_password','$user_ip','$user_address','$user_mobile')";
 
         $sql_execute=mysqli_query($con,$insert_query);
         }

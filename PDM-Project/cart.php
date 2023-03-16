@@ -64,9 +64,14 @@ session_start();
           <a class="nav-link" href="cart.php"><i class="fa-sharp fa-solid fa-cart-shopping"><sup><?php cart_item();?></sup></i> </a>
         </li>
         
-        
        
       </ul>
+      <form class="navbar-form navbar-right" role="search" method="get" action="search_product.php">
+                      <div class="form-group">
+                        <input name="search_data" aria-label="Search" type="search" class="search-query form-control" placeholder="Search...">
+                        <input type="submit"  value = "Search" class="btn btn-outline-light" name="search_data_product">
+                      </div>
+                    </form>
     </div>
   </div>
 </nav>
@@ -89,7 +94,7 @@ session_start();
                   </li>";
           }else{
             echo "<li class='nav-item'>
-                    <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+                    <a class='nav-link' href='./user_area/profile.php'>Welcome ".$_SESSION['username']."</a>
                   </li>";
             echo "<li class='nav-item'>
                     <a class='nav-link' href='./user_area/logout.php'>Logout</a>
