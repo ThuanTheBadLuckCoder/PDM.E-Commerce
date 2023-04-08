@@ -24,7 +24,7 @@ session_start();
     <style>
     .card-img-top {
   width: 100%;
-  height: 200px;
+  height: 600px;
   object-fit: contain;
   border-radius: 8px;
 }</style>

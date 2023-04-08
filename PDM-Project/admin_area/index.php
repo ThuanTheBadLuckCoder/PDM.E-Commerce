@@ -1,3 +1,8 @@
+<?php 
+include('../includes/connect.php');
+include('../functions/common_function.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +26,15 @@
         .admin_image{
     width: 100px;
     object-fit: contain;
+    }
 
-}
+    body{
+        overflow-x:hidden;
+    }
+    .product_image{
+        width:100px;
+        object-fit:contain;
+    }
     </style>
 </head>
 <body>
@@ -60,7 +72,7 @@
                 <div class="button text-center">
                     <button class="my-3"><a href="insert_products.php" class="nav-link text-light bg-info 
                     my-1">Insert Product</a></button>
-                    <button><a href="" class="nav-link text-light bg-info 
+                    <button><a href="index.php?view_products" class="nav-link text-light bg-info 
                     my-1">View Products</a></button>
                     <button><a href="index.php?insert_categories" class="nav-link text-light bg-info
                     my-1">Insert Categories</a></button>
@@ -91,8 +103,11 @@
             if(isset($_GET['insert_brands'])){
                 include('insert_brands.php');
             }
-            if(isset($_GET['insert_products'])){
-                include('insert_products.php');
+            if(isset($_GET['view_products'])){
+                include('view_products.php');
+            }
+            if(isset($_GET['edit_products'])){
+                include('edit_products.php');
             }
             ?>
         </div>

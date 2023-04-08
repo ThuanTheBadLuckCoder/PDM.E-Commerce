@@ -18,7 +18,21 @@ session_start();
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!------ Include the above in your HEAD tag ---------->
+
+<style>
+  .logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 50px;
+  height: 100px;
+}
+</style>
+     <!------ Include the above in your HEAD tag ---------->
+
 </head>
 
 <body>
@@ -35,13 +49,16 @@ session_start();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <!-- <a href="index.php" class="logo-link">
+                    <button class="navbar-brand">
+                      <img src="../imges/af11.png" alt="" class="logo-img">
                     </button>
-                    <a class="navbar-brand" href="Test.html">Logo</a>
+                  </a> -->
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                          <a href="index.php" class="">Home</a>
+                          <a href="index.php"><img src="../imges/logo.png" alt="Home"></a>
                         </li>
                         <li class="active">
                           <a class="" href="display_all.php">Product</a>
