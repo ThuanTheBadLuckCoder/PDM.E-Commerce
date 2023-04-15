@@ -134,7 +134,7 @@ session_start();
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
                   <a href="index.php">
-                    <img src="images/main-logo.png" alt="logo">
+                    <img src="./images/OfficialLogo.png" width="130" height=auto alt="logo">
                   </a>
 
                 </div>

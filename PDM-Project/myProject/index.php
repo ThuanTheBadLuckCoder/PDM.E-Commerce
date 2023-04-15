@@ -50,7 +50,7 @@ session_start();
               </div>
               <div class="col-md-4 col-sm-6">
                 <div class="shipping-purchase text-center">
-                  <p><h4>THE BRAND</h4></p>
+                  <p><h4>THE BRAND - I JUST CAN'T</h4></p>
                 </div>
               </div>
               
@@ -112,7 +112,7 @@ session_start();
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
                   <a href="index.php">
-                    <img src="images/main-logo.png" alt="logo">
+                    <img src="./images/OfficialLogo.png" width="130" height=auto alt="logo">
                   </a>
 
                 </div>
