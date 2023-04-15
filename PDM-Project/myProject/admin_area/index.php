@@ -87,7 +87,7 @@
                 <div class="p-3">
                     <a href="#"><img src="../images/af11.png" alt="" 
                     class = "admin_image"></a>
-                    <p class="text-light text-center">Admin name</p>
+                    <p class="text-light text-center"></p>
                 </div>
                 <div class="button text-center">
                     <button class="my-3"><a href="insert_products.php" class="nav-link text-light bg-info 

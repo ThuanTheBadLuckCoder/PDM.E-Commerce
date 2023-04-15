@@ -25,6 +25,8 @@ if(isset($_POST['confirm_payment'])){
     }
     $update_orders="update `user_orders` set order_status='Complete' where order_id=$order_id";
     $result_update=mysqli_query($con,$update_orders);
+    /* $delete_orders_pending="delete from `orders_pending` where order_id=$order_id";
+    $result_delete=mysqli_query($con,$delete_orders_pending); */
 }
 ?>
 <!DOCTYPE html>

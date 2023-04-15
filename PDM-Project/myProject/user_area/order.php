@@ -49,9 +49,22 @@
     }
 
     //orders pending
-    $insert_pending_orders="Insert into `orders_pending` (user_id,invoice_number,product_id,quantity,order_status)
-    values ($user_id,$invoice_number,$product_id,$quantity,'$status') ";
-    $result_pending_orders=mysqli_query($con,$insert_pending_orders);
+    $get_cart = "SELECT * FROM `cart_details` WHERE ip_address='$get_ip_address'";
+    $run_cart = mysqli_query($con, $get_cart);
+    $select_order="select * from `user_orders` where invoice_number=$invoice_number";
+    $result_order=mysqli_query($con,$select_order);
+    $row_order = mysqli_fetch_assoc($result_order);
+    $order_id=$row_order['order_id'];
+    while($row=mysqli_fetch_array($run_cart)){
+        $product_id=$row['product_id'];
+        $quantity=$row['quantity'];
+        $select_product="Select * from `products` where product_id=$product_id"; 
+        $insert_pending_orders="Insert into `orders_details` (order_id,user_id,invoice_number,product_id,quantity,order_status)
+        values($order_id,$user_id,$invoice_number,$product_id,$quantity,'$status') ";
+        $result_pending_orders=mysqli_query($con,$insert_pending_orders);
+    }
+    
+    
 
     //delete items from cart
     $empty_cart="Delete from `cart_details` where ip_address ='$get_ip_address'";

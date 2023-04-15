@@ -7,7 +7,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Produts</title>
+    <title>Cart</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,7 +78,7 @@ session_start();
               </div>
               <div class="col-md-4 col-sm-6">
                 <div class="shipping-purchase text-center">
-                  <p>ĐÂY LÀ TRANG THỬ NGHIỆM</p>
+                  <p><h4>THE BRAND</h4></p>
                 </div>
               </div>
               
@@ -98,10 +98,13 @@ session_start();
                                 </li>";
                           }else{
                             echo "<li>
-                                  <a href='./user_area/logout.php'>
+                                   <a href='./user_area/profile.php'>
                                     <i class='icon icon-user'>
-                                      SIGN OUT
+                                      
                                     </i>
+                                  </a>
+                                  <a href='./user_area/logout.php'>
+                                    SIGN OUT
                                   </a>
                                 </li>";
                           }
@@ -130,7 +133,7 @@ session_start();
             <div class="row d-flex">
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
-                  <a href="Main page.html">
+                  <a href="index.php">
                     <img src="images/main-logo.png" alt="logo">
                   </a>
 

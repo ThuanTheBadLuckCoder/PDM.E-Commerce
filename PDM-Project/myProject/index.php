@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>The Brand</title>
+    <title>The Brand. I Just Can't</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +50,7 @@ session_start();
               </div>
               <div class="col-md-4 col-sm-6">
                 <div class="shipping-purchase text-center">
-                  <p>ĐÂY LÀ TRANG THỬ NGHIỆM</p>
+                  <p><h4>THE BRAND</h4></p>
                 </div>
               </div>
               

@@ -50,7 +50,7 @@ session_start();
               </div>
               <div class="col-md-4 col-sm-6">
                 <div class="shipping-purchase text-center">
-                  <p>ĐÂY LÀ TRANG THỬ NGHIỆM</p>
+                  <p><h4>THE BRAND</h4></p>
                 </div>
               </div>
               
@@ -111,7 +111,7 @@ session_start();
             <div class="row d-flex">
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
-                  <a href="index.php">
+                  <a href="../index.php">
                     <img src="../images/main-logo.png" alt="logo">
                   </a>
 
@@ -125,18 +125,7 @@ session_start();
                       <li class="menu-item active">
                         <a href="../display_all.php" data-effect="product">Products</a>
                       </li>
-                      <li class="menu-item">
-                        <a class="item-anchor" data-effect="Categories">Categories</a>
-                        <ul class="dropdown-menu" style="background: white;"> <!-- Phần drop down -->
-                          <?php getcategories();?>
-                        </ul>
-                      </li>
-                      <li class="menu-item">
-                        <a  class="item-anchor" data-effect="Brands">Brands</a>
-                        <ul class="dropdown-menu" style="background: white;"> <!-- Phần drop down -->
-                          <?php getbrands();?>
-                        </ul>
-                      </li>
+                      
                       <li>
                         <a href="../cart.php">
                           <i class="icon icon-shopping-cart"></i>
