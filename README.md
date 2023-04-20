@@ -14,7 +14,7 @@ With the E-commerce platform we will build, consumers can register and log in as
 # UX
 The purpose of the the project is to create a e-commerce app for everyone interested in shopping online. Layout is simple and clear. Project is accesible through all modern browsers on both desktop and mobile devices. For build the front-end functionality CSS, HTML is used and for back-end logic.
 
-User Stories
+## User Stories
 As a user I want easily search for product - it is achieved by using search bar available on menubar
 As a user I want to find more details about product - after click on selected product user is redirected to page with all details about chosen product
 As a user I want to add product to cart - user is able to add product to cart and select quantity if required (1 is default value)
