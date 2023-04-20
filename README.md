@@ -1,4 +1,5 @@
-<h1> E-COMMERCE PLATFORM </h1>
+# E-COMMERCE PLATFORM 
+
 
 ## 🚀 About the Project
 
@@ -43,7 +44,7 @@ Page allows user to create an account (user get access to login functionality)
 - Desktop Layaut
 
 
-# Features
+## Features
 The app can be accessible with or without user registration, but in that case some features will be available after registration only (checkout). Anyone is able to perform search, view results, all details about selected product, add product to cart, view and modify product on cart page.
 
 Existing Features
