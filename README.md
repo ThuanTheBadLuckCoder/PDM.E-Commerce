@@ -11,4 +11,34 @@ With the E-commerce platform we will build, consumers can register and log in as
 - Add items or services into cart
 - Check out the the products
 
-condimem Thuan
+# UX
+The purpose of the the project is to create a e-commerce app for everyone interested in shopping online. Layout is simple and clear. Project is accesible through all modern browsers on both desktop and mobile devices. For build the front-end functionality CSS, HTML is used and for back-end logic.
+
+User Stories
+As a user I want easily search for product - it is achieved by using search bar available on menubar
+As a user I want to find more details about product - after click on selected product user is redirected to page with all details about chosen product
+As a user I want to add product to cart - user is able to add product to cart and select quantity if required (1 is default value)
+As a user I want to update / delete items from cart - user is able to update and delete items on cart page
+As a user I want to pay for chosen product - after registration/login user is able to access checkout page
+As a business owner I want to expand my business and increase sales
+it is achieved by building online presence
+Layout
+The layout is simple and consistent through all modern browsers. The project has been designed with a mobile first approach and it is fully responsive across devices. To achieve this Bootstrap 4 components library was used along with custom styles. Project consist following pages:
+
+Products(homepage)
+page where are displayed all products in form of card with image and short info about specs and price of each product
+Product Details
+Page include all details about selected product - image, description, main components summary, price and add to cart button with input field allowing select product quantity
+Cart page / empty cart
+Page allows to review what is in cart - Image thumbnail is displayed along with product name and possibility for user to change quantity or delete item completely. Page include total price for all product placed in cart. Below that there are two buttons, one placed on right hand side and second on the left hand side of the screen allowing user to continue shopping or go to checkout. When we remove all items cart icon is displayed with short info that cart is empty and user can go back shopping by clicking Continue Shopping button
+Search page / no search results
+Page displays searching results in form similar to homepage. There is a card with image and short info about specs and price of each product. When keyword enter into searchbox isn't match any product, search icon is displayed along with text informing user that product is not found.
+Checkout page (available after user login)
+Page similar to cart page but the difference is that user can't update any product details. This is summary before payment. Page displays product thumbnail, name, quantity, price and total price. Below that user has payment form to fill in with user details and card details. After payment user is redirected to homepage.
+Login
+Page allows user to login (user get access to checkout page and payment functionality)
+Registration
+Page allows user to create an account (user get access to login functionality)
+Wireframes
+Mobile Layout
+Desktop Layaut
