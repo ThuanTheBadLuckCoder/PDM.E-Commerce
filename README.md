@@ -21,7 +21,7 @@ The purpose of the the project is to create a e-commerce app for everyone intere
 - As a user I want to update / delete items from cart - user is able to update and delete items on cart page
 - As a user I want to pay for chosen product - after registration/login user is able to access checkout page
 - As a business owner I want to expand my business and increase sales
--- it is achieved by building online presence
++ it is achieved by building online presence
 #### Layout
 The layout is simple and consistent through all modern browsers. The project has been designed with a mobile first approach and it is fully responsive across devices. To achieve this Bootstrap 4 components library was used along with custom styles. Project consist following pages:
 
