@@ -66,3 +66,102 @@ The app can be accessible with or without user registration, but in that case so
 - add confirmation email after purchase (currently only flash message appears)
 - add filters to search option (currently only search by any keyword is available)
 - customers reviews
+
+
+## Techonologies used 
+- GitHub - provides hosting for software development version control using Git.
+- Git - version-control system for tracking changes in source code during software development.
+- HTML5 - standard markup language for creating Web pages.
+- CSS3 - used to define styles for Web pages, including the design, layout and variations in display for different devices and screen sizes.
+- VS Code - code editor redefined and optimized for building and debugging modern web and cloud applications.
+- Php - Php library.
+- ERDPlus - Used to design, simulate diagrams - database
+
+## Testing
+#### Automated testing
+
+###### For the testing following tools and services was used:
+
+- Chrome Developer Tools - a set web authoring and debugging tools built into Google Chrome.
+- CSS Validation -service helps to check validity of Cascading Style Sheets (CSS).
+- Markup Validation - helps check the validity of Web documents.
+- JSLint - a static code analysis tool used for checking if JavaScript source code complies with coding rules.
+- All validation tests passed: no errors in the DevTools console. CSS and JavaScript have correct syntax as well. The HTML validator did not recognise the Django template tags which resulted in showing errors.
+
+- The website was constantly tested by Travis CI each time it was pushed to git. All test are passed as is indicated on the top of this README.MD file page by green Travis CI icon.
+
+#### Manual testing
+###### Manual testing was performed by clicking every element on page which can be clicked.
+
+1. Search form
+
+- Available all the time on menubar
+- Try to submit empty form and verify that an error message about required fields appear - form doesn't have required attribute. After submiting returning page with all available products.
+- Try to submit the form with valid input and verify that a success message appears (after entering keyword user is redirected to results page and the product matches searching criteria are displayed)
+
+2. Login form page
+
+- Go to Products(homepage) page
+- Click Log in link on navigation bar (user is redirected to login page)
+- Try to submit empty form and verify that an error message about required fields appear(required field message appears)
+- Try to submit the form with valid input and verify that a success message appears (user is redirected to homepage with successful login message)
+- Try to submit the form with invalid input and verify that a error message appears (Your username or password is incorrect message appears)
+
+3. Registration form page
+
+- Go to Product(homepage) page
+- Click Log in link on navigation bar (user is redirected to registration page)
+- Click Create account button below the login form
+- Try to submit empty form and verify that an error message about required fields appear (required field message appears)
+- Try to submit the form with valid input and verify that a success message appears (user is redirected to homepage with success message)
+- Try to submit the form with invalid input and verify that a error message appears (Unable to register your account message appears)
+- Click Sign In under Create account button (user is redirected to login page with success message)
+
+4. Add to cart form
+
+- Go to Product details page
+- Try to submit empty form and verify that an error message about required fields appear (required message appears)
+- Try to submit the form with valid input and verify that a success message appears (Item added to your cart. View cart message appears)
+- Try to submit the form with invalid input and verify that a error message appears.(field has html5 type number attribute and initial default value 1 preventing entering invalid input)
+
+5. Cart form
+
+- Go to the Cart page
+- Try to submit empty form and verify that an error message about required fields appear (required message appears)
+- Try to submit the form with valid input and verify that a success message appears (Cart updated message appears)
+- Try to submit the form with invalid input and verify that a error message appears (field has html5 type number attribute preventing entering invalid input and also has initial value number of the specific item, which was selected on add to cart page)
+- Click Trash icon - item is deleted from cart (message appears)
+- Click Shoppig button (user is redirected to products page (homepage))
+- Click Checkout button (user is redirected to checkout page)
+
+6. Payment user details/ credit card form
+
+- Go to Checkout page
+- Try to submit empty form and verify that an error message about required fields appear (required message appears)
+- Try to submit the form with valid input and verify that a success message appears (user is redirected to homepage and message appears)
+- Try to submit the form with invalid input and verify that a error message appears (use different card number cause error message appears)
+- All fields in user details form have required attribute. Credit card forms has required attr set to false as there is some issue and payment cannot be successfully proceed.
+
+7. Site navigation
+
+- Click on Home link (redirect to index/homepage)
+- Click on logo/brand link (redirect to index/homepage)
+- Click on Log in link (redirect to login page form)
+- Click on Register link (redirect to registration page form)
+- Click on Cart link (redirect to cart page)
+- Click on Logout link (user is logged out)
+- Click on Back to top arrow icon (page is scrolling up)
+- All links are working and pointing to correct place.There are no dead links.
+
+8. Services(homepage)
+
+- Click on selected product card (user is redirected to chosen product on product details page)
+
+## Deployment
+The project was developed, committed to git and pushed to GitHub using Visual Studio Code IDE.
+
+The project was deployed using Heroku as a hosting platform. Static files and media files are stored using AWS S3 storage service.
+
+#### Acknowledgements
+I received inspiration for this project through internet research. I visited websites such as Currys, Harvey Norman, D.I.D and watched youtube tutorials, which helped me to put all the pieces together.
+Many thanks to my mentor Victor Miclovich for all suggestions and possible solutions to various issues encountered during project development process.
