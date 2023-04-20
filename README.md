@@ -47,22 +47,22 @@ Page allows user to create an account (user get access to login functionality)
 ## Features
 The app can be accessible with or without user registration, but in that case some features will be available after registration only (checkout). Anyone is able to perform search, view results, all details about selected product, add product to cart, view and modify product on cart page.
 
-Existing Features
-search bar - allows user to search product by keyword. Return all products where search keywords appears
-login/register system - allows user access full app functionality
-logout
-back to top arrow - scrolling to top of page
-flash messages apperars after user login/registration, add/update/delete and purchase product (disappears after 5s)
-user can't access payment page without registration/login
-after adding product to cart small badge with product quantity appears on menubar beside cart icon
-Stripe payment integration
-short product info cards on homepage
-function preventing access restricted page(checkout) without registration/login
-Features Left to Implement
-add some gallery image on product details page
-create categories (category model has been created and relation to product exist, but there is no views implemented for categories)
-create pagination
-create contact page
-add confirmation email after purchase (currently only flash message appears)
-add filters to search option (currently only search by any keyword is available)
-customers reviews
+#### Existing Features
+- search bar - allows user to search product by keyword. Return all products where search keywords appears
+- login/register system - allows user access full app functionality
+- logout
+- back to top arrow - scrolling to top of page
+- flash messages apperars after user login/registration, add/update/delete and purchase product (disappears after 5s)
+- user can't access payment page without registration/login
+- after adding product to cart small badge with product quantity appears on menubar beside cart icon
+- Stripe payment integration
+- short product info cards on homepage
+- function preventing access restricted page(checkout) without registration/login
+#### Features Left to Implement
+- add some gallery image on product details page
+- create categories (category model has been created and relation to product exist, but there is no views implemented for categories)
+- create pagination
+- create contact page
+- add confirmation email after purchase (currently only flash message appears)
+- add filters to search option (currently only search by any keyword is available)
+- customers reviews
