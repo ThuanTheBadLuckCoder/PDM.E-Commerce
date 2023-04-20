@@ -1,6 +1,6 @@
 <h1 align="center"> E-COMMERCE PLATFORM </h1> 
 
-![LOGO-no-bg](https://user-images.githubusercontent.com/102339067/233403751-9cbfc3fb-0aa1-4442-bd2a-d2d93f2ef860.png)
+![LOGO-no-bg (1)](https://user-images.githubusercontent.com/102339067/233404472-1a311317-78ae-479f-ba5a-40fb95676301.png)
 
 
 ## 🚀 About the Project
