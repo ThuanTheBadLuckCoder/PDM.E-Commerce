@@ -1,9 +1,5 @@
 ![topic](https://user-images.githubusercontent.com/102339067/233414837-a6fb1006-79a3-44e6-ac24-d605de061c99.png)
 
-![LOGO-no-bg (1)](https://user-images.githubusercontent.com/102339067/233404472-1a311317-78ae-479f-ba5a-40fb95676301.png)
-
-
-
 
 ## 🚀 About the Project
 
@@ -161,8 +157,6 @@ The app can be accessible with or without user registration, but in that case so
 
 - Click on selected product card (user is redirected to chosen product on product details page)
 
-![LOGO-no-bg (1)](https://user-images.githubusercontent.com/102339067/233404472-1a311317-78ae-479f-ba5a-40fb95676301.png)
-
 ## Deployment
 The project was developed, committed to git and pushed to GitHub using Visual Studio Code IDE.
 
@@ -171,3 +165,7 @@ The project was deployed using Heroku as a hosting platform. Static files and me
 #### Acknowledgements
 I received inspiration for this project through internet research. I visited websites such as Currys, Harvey Norman, D.I.D and watched youtube tutorials, which helped me to put all the pieces together.
 Many thanks to my mentor Victor Miclovich for all suggestions and possible solutions to various issues encountered during project development process.
+
+![LOGO-no-bg (1)](https://user-images.githubusercontent.com/102339067/233404472-1a311317-78ae-479f-ba5a-40fb95676301.png)
+
+
