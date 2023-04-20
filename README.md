@@ -8,7 +8,8 @@ With the E-commerce platform we will build, consumers can register and log in as
 # 🧐 Features
 
 Registration and Login
-\n Add items or services into cart
-\n Check out the the products
+Add items or services into cart
+
+Check out the the products
 
 condimem Thuan
