@@ -1,4 +1,4 @@
-<h1 align="center"> ![tOPIC](https://user-images.githubusercontent.com/102339067/233408789-10997165-b72b-476b-926e-e7790cef178f.png) </h1> 
+![tOPIC](https://user-images.githubusercontent.com/102339067/233408789-10997165-b72b-476b-926e-e7790cef178f.png) 
 
 ![LOGO-no-bg (1)](https://user-images.githubusercontent.com/102339067/233404472-1a311317-78ae-479f-ba5a-40fb95676301.png)
 
