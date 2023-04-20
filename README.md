@@ -1,4 +1,4 @@
-# E-COMMERCE PLATFORM 
+<h1 align="center"> E-COMMERCE PLATFORM </h1> 
 
 
 ## 🚀 About the Project
